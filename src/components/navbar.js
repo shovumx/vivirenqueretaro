@@ -11,7 +11,7 @@ const Navbar = () => (
 		</div>
 
 		<div className="column right">
-		<Link to="/contacto" className="navbar-item has-text-white has-background-success">Contacto</Link>
+		<Link to="#contacto" className="navbar-item has-text-white has-background-success">Contacto</Link>
 		</div>
 	</div>
 </div>

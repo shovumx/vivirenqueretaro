@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: "Agencia de marketing digital en Querétaro | Equilibrio",
-    author: "Equilibrio",
+    title: "Compra y renta de bienes raíces en Querétaro",
+    author: "Agencia inmobiliaria",
     description:
-      "Somos una agencia de marketing digital enfocada en pequeñas y medianas empresas. Nuestras fortalezas: SEO, social media, diseño web y gráfico.",
+      "Somos una Agencia Inmobiliaria en Querétaro basada en Inteligencia Artificial y Big Data.",
     siteUrl: "https://equilibrio.studio",
-    facebook: "https://facebook.com/equilibrio.studio.mx"
+    facebook: "https://facebook.com/VivirEnQueretaroMX"
   },
   
   plugins: [
@@ -31,13 +31,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Makefolio",
-        short_name: "Makefolio",
+        name: "Vivir en Querétaro",
+        short_name: "Vivir en Querétaro",
         start_url: "/",
-        background_color: "#2980b9",
+        background_color: "#fff",
         theme_color: "#2980b9",
         display: "standalone",
-        icon: "src/images/gatsby-icon.png",
+        icon: "src/images/icon.png",
         orientation: "portrait"
       }
     },
@@ -53,14 +53,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-XXXXXXXX-X",
+        trackingId: "UA-150522236-2",
       }
-    },
-    {
-      resolve: `gatsby-plugin-facebook-pixel`,
-      options: {
-        pixelId: 'pixel id here',
-      },
     },
     `gatsby-plugin-sitemap`,
     {
@@ -68,37 +62,21 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Exo`,
-            variants: [`300`, `400`, `700`]
+            family: `Poppins`,
+            variants: [`300`, `400`, `700`, `800`]
           },
           {
-            family: `Exo`,
+            family: `Poppins`,
             subsets: [`latin`]
           },
           {
-            family: `PT Sans`,
+            family: `Source Sans Pro`,
             variants: [`300`, `400`, `700`]
           },
           {
-            family: `PT Sans`,
+            family: `Source Sans Pro`,
             subsets: [`latin`]
           },
-          {
-            family: `Abril Fatface`,
-            variants: [`300`, `400`, `700`]
-          },
-          {
-            family: `Abril Fatface`,
-            subsets: [`latin`]
-          },
-          {
-            family: `Barlow Condensed`,
-            variants: [`300`, `400`, `700`]
-          },
-          {
-            family: `Barlow Condensed`,
-            subsets: [`latin`]
-          }
         ]
       }
     }
