@@ -34,6 +34,7 @@ export default () => (
 				/>
 				
 				<meta name="robots" content="index,follow"></meta>
+				<link rel="canonical" href="https://vivirenqueretaro.mx/" />
 				{/* <!-- Open Graph / Facebook --> */}
 				<meta property="og:type" content="website" />
             <meta property="og:url" content="https://vivirenqueretaro.mx/" />

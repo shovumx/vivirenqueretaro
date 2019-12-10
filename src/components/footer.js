@@ -33,8 +33,14 @@ const Footer = () => (
             </div>
           </div>
           <p className="is-size-7">
-            Agencia Inmobiliaria en Querétaro.  Todos
-            los derechos reservados. 2020.
+            Agencia Inmobiliaria en Querétaro. Todos los derechos reservados.
+            2020.
+          </p>
+          <p className="is-size-7">
+            <a href="https://equilibrio.studio">
+              {" "}
+              Diseño web hecho por Equilibrio.Studio.
+            </a>
           </p>
 
           <article className="media center">

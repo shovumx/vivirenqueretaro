@@ -7,7 +7,6 @@ import "../components/formulario.scss";
 import Helmet from "../components/helmet";
 import MyForm from "../components/formulario";
 import Footer from "../components/footer";
-import Video from "../components/video";
 import { Link } from "gatsby";
 import Navbar from "../components/navbar";
 
