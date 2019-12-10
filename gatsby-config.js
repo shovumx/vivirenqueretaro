@@ -41,6 +41,14 @@ module.exports = {
         orientation: "portrait"
       }
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://vivirenqueretaro.mx',
+        sitemap: 'https://vivirenqueretaro.mx/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-google-analytics`,

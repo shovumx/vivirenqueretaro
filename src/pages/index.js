@@ -5,15 +5,18 @@ import "../components/style.scss";
 import "../components/columns.scss";
 import "../components/formulario.scss";
 import Helmet from "../components/helmet";
-import Header from "../components/header";
 import MyForm from "../components/formulario";
 import Footer from "../components/footer";
 import Video from "../components/video";
+import { Link } from "gatsby";
+import Navbar from "../components/navbar";
 
 export default () => {
   const data = useStaticQuery(graphql`
     query {
-      imageOne: file(relativePath: { eq: "images/marketingdigital.png" }) {
+      imageOne: file(
+        relativePath: { eq: "images/agencia_inmobiliaria_queretaro.png" }
+      ) {
         childImageSharp {
           fluid(maxWidth: 1200) {
             aspectRatio
@@ -24,7 +27,9 @@ export default () => {
           }
         }
       }
-      imageTwo: file(relativePath: { eq: "images/publicidad.png" }) {
+      imageTwo: file(
+        relativePath: { eq: "images/bienes_raices_queretaro.png" }
+      ) {
         childImageSharp {
           fluid(maxWidth: 1200) {
             aspectRatio
@@ -35,7 +40,9 @@ export default () => {
           }
         }
       }
-      imageThree: file(relativePath: { eq: "images/redessociales.png" }) {
+      imageThree: file(
+        relativePath: { eq: "images/renta_casas_queretaro.png" }
+      ) {
         childImageSharp {
           fluid(maxWidth: 1200) {
             aspectRatio
@@ -46,7 +53,9 @@ export default () => {
           }
         }
       }
-      imageFour: file(relativePath: { eq: "images/seo.png" }) {
+      imageFour: file(
+        relativePath: { eq: "images/venta_casas_queretaro.png" }
+      ) {
         childImageSharp {
           fluid(maxWidth: 1200) {
             aspectRatio
@@ -57,20 +66,11 @@ export default () => {
           }
         }
       }
-      imageFive: file(relativePath: { eq: "images/nosotros.png" }) {
+      imageFive: file(
+        relativePath: { eq: "images/vivir_en_queretaro.png" }
+      ) {
         childImageSharp {
-          fluid(maxWidth: 1200) {
-            aspectRatio
-            sizes
-            base64
-            src
-            srcSet
-          }
-        }
-      }
-      imageSix: file(relativePath: { eq: "images/equilibrio-studio.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
+          fluid(maxWidth: 1400) {
             aspectRatio
             sizes
             base64
@@ -84,314 +84,396 @@ export default () => {
   return (
     <div>
       <Helmet />
-      <Header />
-      <div>
-        <section className="section sa" id="informacion">
+      <section className="hero is-fullheight">
+        <Navbar />
+        <div className="hero-body">
           <div className="container">
-            <div className="columns">
-              <div className="column"></div>
-              <div className="column is-three-quarters">
-                <h2 className="title is-2 has-text-centered has-text-weight-bold has-text-white">
-                <span className="magical">La importancia del Marketing Digital</span>
-                </h2>
-                <p className="is-size-4 has-text-white">
-                  Piensa en un negocio local que consideres exitoso. Puede ser
-                  una tienda, un restaurante o un taller. ¿Dónde está? Si es de
-                  comida, seguramente cerca de una zona de oficina o de
-                  estudiantes. Si vende productos, tal vez está en el centro,
-                  donde mucha gente pasa caminando, o en alguna avenida
-                  principal a la vista de miles de coches.{" "}
+            <div className="columns has-text-centered">
+              <div className="column is-half">
+                <h1 className="subtitle is-3 has-text-weight-light">
+                  Agencia inmobilaria
+                </h1>
+                <h2 className="title is-1 single-spaced">Vivir en Querétaro</h2>
+                <p className="is-size-5 has-text-grey-dark">
+                  ¿Sabías que más del{" "}
+                  <span className="magical"> 70% de las personas</span> se
+                  arrepienten de la casa que escogen para vivir?
                 </p>
-                <p className="is-size-4 has-text-white">
-                  Piensa ahora en ese negocio de algún ser querido que no pegó.
-                  ¿Qué tanta culpa tiene el no haber rentado un local a la vista
-                  de todos para poder mostrar su gran producto?{" "}
-                </p>
-                <p className="is-size-4 has-text-white">
+                <p className="is-size-5 has-text-grey-dark">
+                  Nosotros te ayudamos a elegir la mejor casa de acuerdo a tu
+                  estilo de vida con un método basado en{" "}
                   <span className="magical">
-                    ¿Te gustaría que a tu producto le pasara lo mismo?
+                    inteligencia artificial y big data
                   </span>{" "}
-                  El marketing digital, cuando está bien hecho, te permite ser
-                  visible en un mundo con{" "}
-                  <span className="magical">
-                    millones de habitantes digitales
-                  </span>{" "}
-                  que están buscando productos y servicios todo el tiempo.{" "}
+                  para que no formes parte de esa mala estadística.
                 </p>
-                <p className="is-size-4 has-text-white">
-                  Querétaro es una ciudad cosmopolita. Gente nueva llega todo el
-                  tiempo. Del norte, del sur, del centro. De otros países. ¿Y
-                  qué hace toda esta gente cuando necesita algo en una ciudad
-                  que no conoce? Recurre al internet.{" "}
-                  <span className="magical">
-                    Y ahí es donde debes estar tú.
-                  </span>{" "}
-                </p>
+                <Link
+                  to="#informacion"
+                  className="button is-success is-outlined is-rounded"
+                >
+                  Más información
+                </Link>
               </div>
-              <div className="column"></div>
-            </div>
-
-            <div className="columns">
-              <div className="column"></div>
               <div className="column is-half">
                 <Img
                   fluid={data.imageOne.childImageSharp.fluid}
-                  alt="Agencia de Marketing Digital en Querétaro"
+                  alt="Inmobiliaria en Querétaro"
                 />
               </div>
-              <div className="column"></div>
             </div>
-          </div>
-          <div className="container">
-            <div className="columns">
-              <div className="column"></div>
-              <div className="column is-three-quarters">
-                <h2 className="title is-size-2 has-text-centered has-text-weight-bold has-text-white">
-                <span className="magical">Sobre nuestra Agencia</span>
-                </h2>
-                <p className="is-size-4 has-text-white">
-                  Antes de que sigas leyendo, es importante hablar un poco de
-                  nosotros. Somos una Agencia de Marketing Digital enfocada las
-                  pequeñas y medianas empresas. Hasta hace no mucho, la
-                  publicidad era cosa de las grandes empresas que podían pagar
-                  millonarios anuncios en televisión.{" "}
-                </p>
-                <p className="is-size-4 has-text-white">
-                  Con el auge del internet, los canales de comunicación se
-                  pusieron al alcance de todos. Sin embargo, no muchas agencias
-                  han seguido el mismo camino y siguen enfocadas en las grandes
-                  marcas.{" "}
-                </p>
-                <p className="is-size-4 has-text-white">
-                  Hace nueve años comenzamos en el marketing digital. Hemos
-                  visto crecer a Twitter, el nacimiento de las páginas en
-                  Facebook y el gran auge de Instagram. Hemos trabajado para
-                  grandes marcas en el extranjero, 'freelanceado' para pequeños
-                  clientes y descubierto muchas herramientas y trucos que nos
-                  ayudan en nuestro día a día.{" "}
-                </p>
-                <p className="is-size-4 has-text-white">
-                  Equilibrio Studio nace con la firme esperanza de convertirnos
-                  en aliados de esas PyMes en Querétaro que tienen un gran
-                  producto o servicio qué ofrecer. Creemos que la creatividad es
-                  un gran factor de igualdad en la Web, y que, con el esfuerzo
-                  adecuado, se puede construir un local increíble en una gran
-                  avenida con miles de ojos viéndolo.
-                </p>
-              </div>
-              <div className="column"></div>
-            </div>
-
-            <div className="columns">
-              <div className="column"></div>
-              <div className="column is-half">
-                <Img
-                  fluid={data.imageFive.childImageSharp.fluid}
-                  alt="Sobre nuestra Agencia de Marketing Digital"
-                />
-              </div>
-              <div className="column"></div>
-            </div>
-          </div>
-          <div className="container">
-            <div className="columns">
-              <div className="column"></div>
-              <div className="column is-three-quarters">
-                <h2 className="title is-size-2 has-text-centered has-text-weight-bold has-text-white">
-                <span className="magical">Manejo de redes sociales</span>
-                </h2>
-                <p className="is-size-4 has-text-white">
-                  No hay mejor metáfora para pensar las redes sociales que una
-                  gran plaza comercial. Ahí convergen vendedores, un montón de
-                  compradores y gente que solo va a socializar. Todos en zonas
-                  distintas para comprar ropa, comer o jugar.{" "}
-                </p>
-                <p className="is-size-4 has-text-white">
-                  ¿Dónde quieres que esté parado tu negocio? Hay un mundo
-                  inmenso de redes sociales. ¿Tiene sentido que tu negocio esté
-                  en todas? Probablemente no. Incluso, tal vez resulte negativo
-                  intentar comerse todo el pastel. ¿Hasta dónde llegar?{" "}
-                </p>
-                <p className="is-size-4 has-text-white">
-                  Uno de los pilares ideológicos de nuestra Agencia es el
-                  marketing digital pragmático. No queremos cobrarte por cobrar.
-                  ¿Tiene sentido que un negocio de plomería este en Instagram?
-                  ¿Qué gana un restaurante de sushi teniendo perfil en Twitter?
-                </p>
-                <p className="is-size-4 has-text-white">
-                  Nuestra promesa es la siguiente: manejar las redes sociales
-                  que hagan sentido. Trazar una línea creativa que sirva para
-                  fidelizar a tus clientes y conseguir nuevos. Que en esa gran
-                  plaza comercial, tu local esté bien decorado y tu discurso de
-                  ventas sea lo suficientemente atractivo como para captar la
-                  atención de ese mundo de posibles compradores.
-                </p>
-              </div>
-              <div className="column"></div>
-            </div>
-
-            <div className="columns">
-              <div className="column"></div>
-              <div className="column is-half">
-                <Img
-                  fluid={data.imageThree.childImageSharp.fluid}
-                  alt="Manejo de Redes Sociales"
-                />
-              </div>
-              <div className="column"></div>
-            </div>
-          </div>
-          <div className="container">
-            <div className="columns">
-              <div className="column"></div>
-              <div className="column is-three-quarters">
-                <h2 className="title is-size-2 has-text-centered has-text-weight-bold has-text-white">
-                <span className="magical">Posicionamiento web en Google</span>
-                </h2>
-                <p className="is-size-4 has-text-white">
-                  Volvamos a la idea de los negocios que no funcionaron por
-                  tener mala ubicación. Esa calle pequeña, donde no pasa gente y
-                  nadie ve tu local, son las últimas páginas de Google. La calle
-                  de los Arcos o el centro de Querétaro es la primera página de
-                  Google.{" "}
-                </p>
-                <p className="is-size-4 has-text-white">
-                  Tenemos un equipo de especialistas dedicado a optimizar tu
-                  página web para que logres llegar a esa ansiada página uno. Si
-                  tienes un producto de primer nivel, entonces tienes que estar
-                  en un lugar de primer nivel para redondear el círculo.{" "}
-                </p>
-                <p className="is-size-4 has-text-white">
-                  La mayoría de las personas buscan en Google cualquier cosa que
-                  necesitan. Estar visible en esa ventana es una gran manera de
-                  poder captar clientes nuevos constantemente. ¿De qué sirve
-                  tener un local bien decorado y con un gran discurso de ventas
-                  si está a la mitad de la nada?{" "}
-                </p>
-              </div>
-              <div className="column"></div>
-            </div>
-
-            <div className="columns">
-              <div className="column"></div>
-              <div className="column is-half">
-                <Img
-                  fluid={data.imageFour.childImageSharp.fluid}
-                  alt="Optimización de páginas web para posicionamiento en Google"
-                />
-              </div>
-              <div className="column"></div>
-            </div>
-          </div>
-          <div className="container">
-            <div className="columns">
-              <div className="column"></div>
-              <div className="column is-three-quarters">
-                <h2 className="title is-size-2 has-text-centered has-text-weight-bold has-text-white">
-                <span className="magical">Campañas de publicidad en redes sociales y Google</span>
-                </h2>
-                <p className="is-size-4 has-text-white">
-                  La mejor publicidad, dicen, es la de boca en boca. Es la ideal
-                  por muchas razones. Primero, no te cuesta nada. Segundo, quien
-                  habla bien de tu negocio sin ningún interés lo hace con
-                  sinceridad, entonces es muy probable que quien escuche le dé
-                  el beneficio de la duda a tu producto.
-                </p>
-                <p className="is-size-4 has-text-white">
-                  Sin embargo, es muy difícil conseguir este tipo de publicidad
-                  a gran escala. Así que hay que invertir en el marketing
-                  digital para ir dando a conocer tu negocio a
-                  personas que podrían estar interesadas.
-                </p>
-                <p className="is-size-4 has-text-white">
-                  En nuestra Agencia de Marketing Digital podemos llevar campañas de todo tipo
-                  (Facebook, Instagram, Twitter y Google) dependiendo el
-                  objetivo que tengas. Desde dar a conocer un producto hasta
-                  generar ventas, en pocos meses puedes comenzar a ver
-                  resultados que de otra forma tardarían mucho más tiempo.
-                </p>
-              </div>
-              <div className="column"></div>
-            </div>
-
-            <div className="columns">
-              <div className="column"></div>
-              <div className="column is-half">
-              <Video
-                  videoSrcURL="https://www.youtube.com/embed/vNrxe5nJenU"
-                  videoTitle="Agencia de Marketing Digital en Querétaro"
-                />
-              </div>
-              <div className="column"></div>
-            </div>
-          </div>
-          <div className="container">
-            <div className="columns">
-              <div className="column"></div>
-              <div className="column is-three-quarters">
-                <h2 className="title is-size-2 has-text-centered has-text-weight-bold has-text-white">
-                <span className="magical">Diseño gráfico y creación de contenido</span>
-                </h2>
-                <p className="is-size-4 has-text-white">
-                  En estos tiempos de tanta información y competencia, ya no es
-                  suficiente con que tu empresa dé un gran servicio. Ahora es
-                  necesario aportar algo extra que le agregue valor a tu marca.
-                </p>
-                <p className="is-size-4 has-text-white">
-                  En Equilibrio Studio tenemos gente especialista en el diseño
-                  gráfico y la creación de contenido visual y de texto. Podemos
-                  hacer fotografías, vídeos y gráficos con tu marca; rediseñar
-                  tu logo, hacer tarjetas de presentación, infografías,
-                  banners...
-                </p>
-                <p className="is-size-4 has-text-white">
-                  Si quieres tener un blog o 'newsletter', también podemos
-                  generar textos interesantes y atractivos para tu audiencia
-                  ideal. Mucha gente te verá como una autoridad en la materia si
-                  decides compartir todo este conocimiento que durante años has
-                  ido acumulando.
-                </p>
-              </div>
-              <div className="column"></div>
-            </div>
-
-            <div className="columns">
-              <div className="column"></div>
-              <div className="column is-half">
-                <Img
-                  fluid={data.imageTwo.childImageSharp.fluid}
-                  alt="Campañas de publicidad en Facebook y Google en Querétaro"
-                />
-
-              </div>
-              <div className="column"></div>
-            </div>
-          </div>
-          <div>
-    <section className="section sa">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-half">
-                      <h2 className="title is-size-2 has-text-centered has-text-weight-bold has-text-white">¿Quieres más información sobre nosotros?</h2>
-            <MyForm />
-           </div>
-          <div className="column is-half">
-          <Img
-                  fluid={data.imageSix.childImageSharp.fluid}
-                  alt="Equilibrio Studio - Agencia de Marketing Digital"
-                />
-
-          </div>
-          <div className="column">
-
           </div>
         </div>
-      </div>
-    </section>
-  </div>
-        </section>
-      </div>
-      
+        <div className="hero-footer"></div>
+      </section>
+
+      <section className="hero is-medium">
+        <div className="hero-head">
+          <div className="container">
+            <div className="columns">
+              <div className="column"></div>
+              <div
+                className="column is-three-quarters has-text-centered"
+                id="informacion"
+              >
+                <h2 className="subtitle is-size-2 has-text-grey-dark  has-text-weight-bold">
+                  Ventajas de comprar o rentar en Querétaro con nosotros
+                </h2>
+                
+                <p className="is-size-4">
+                  Tenemos las herramientas para elegir la mejor colonia para ti,
+                  para gestionar todo a distancia e irnos coordinando para
+                  visitas cuando tengas el tiempo suficiente para pasar unos
+                  días u horas en Querétaro.
+                </p>
+
+                <p className="is-size-4">
+                  Nuestra Inteligencia Artificial permite ahorrar el suficiente
+                  tiempo como para que el hecho de que ahora mismo no estés en
+                  Querétaro no represente problema alguno. Además, nosotros nos
+                  encargamos de gestionar tu mudanza y recibir todas tus cosas
+                  para que cuando llegues, todo empiece a tomar forma.
+                </p>
+
+                <p className="is-size-4">
+                  Una de las mejores estrategias para vender una casa tiene que
+                  ver con el diseño de interiores. No porque la gente la vaya a
+                  comprar con muebles (aunque podría darse el caso), sino porque
+                  viendo un buen acomodo, la gente puede imaginarse todas las
+                  posibilidades que tiene el espacio de una casa.
+                </p>
+                <Img
+                  fluid={data.imageTwo.childImageSharp.fluid}
+                  alt="Bienes Raíces en Querétaro"
+                />
+                <p className="is-size-4">
+                  Uno de nuestros puntos fuertes es el diseño de interiores.
+                  Como herramienta de ventas o como una solución para que no te
+                  preocupes sobre cómo ocupar los espacios de tu casa nueva.
+                  Mucha gente no tiene tiempo para ver muebles que hagan armonía
+                  estética o para medir espacios, así que nosotros nos podemos
+                  ocupar de eso. Muebles adecuados a tu gusto y tu casa,
+                  decoración para realzar e iluminación para cerrar el círculo.
+                </p>
+
+                <p className="is-size-4">
+                  Ahora que… ¿ninguna casa te convence o prefieres construir?
+                  Tenemos un equipo calificado de arquitectos que pueden diseñar
+                  y ejecutar un proyecto adecuado a tus necesidades. Como este
+                  tema tiene muchas aristas, lo más sensato es que te pongas en
+                  contacto con nosotros para escucharte y luego poderte dar una
+                  respuesta que haga sentido.
+                </p>
+              </div>
+              <div className="column"></div>
+            </div>
+          </div>
+        </div>
+        <div className="hero-body">
+          <div className="container">
+            <div className="columns">
+              <div className="column">
+                <div className="notification is-primary">
+                  <h2 className="subtitle is-5 has-text-white-ter has-text-weight-bold">
+                    Datos
+                  </h2>
+                  <p>
+                    Conocimiento es poder. Hemos analizado más de 8,000
+                    viviendas en el mercado para poder darte la mejor asesoría
+                    inmobiliaria y poner de tu lado toda esa información para
+                    tomar la mejor decisión a la hora de negociar tu próximo
+                    hogar o una exitosa inversión inmobiliaria.
+                  </p>
+                </div>
+              </div>
+              <div className="column">
+                <div className="notification is-info">
+                  <h2 className="subtitle is-5 has-text-white-ter has-text-weight-bold">
+                    Entorno
+                  </h2>
+                  <p>
+                    No existe la mejor colonia en Querétaro. Lo que es bueno
+                    para uno, no es lo mejor para otro. Nuestra Inteligencia
+                    Artificial contempla todos los servicios que rodean una
+                    colonia para escoger la ideal para ti y tu familia.
+                  </p>
+                </div>
+              </div>
+              <div className="column">
+                <div className="notification is-success">
+                  <h2 className="subtitle is-5 has-text-white-ter has-text-weight-bold">
+                    Ahorro de tiempo
+                  </h2>
+                  <p>
+                    Nuestras soluciones tecnológicas nos ayudan a evitar visitas
+                    o llamadas a casas incompatibles. Eso, traducido al español,
+                    es ahorro de tiempo y frustraciones para todos.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="container">
+              <div className="columns">
+                <div className="column is-half">
+                  <h3 className="subtitle is-3 has-text-grey-dark has-text-centered has-text-weight-bold">
+                    Algunos datos:
+                  </h3>
+                  <span className="right">83%</span>
+                  <span className="left">
+                    Casas en venta entre $2,220,000 y $2,800,000
+                  </span>
+                  ​
+                  <progress class="progress is-primary" value="83" max="100">
+                    83%%
+                  </progress>
+                  <span className="right">64%</span>
+                  <span className="left">
+                    Cantidad de escuelas en la zona Centro
+                  </span>
+                  ​
+                  <progress class="progress is-link" value="64" max="100">
+                    64%
+                  </progress>
+                  <span className="right">43%</span>
+                  <span className="left">
+                    Colonias a más de 7 km de del Centro Histórico
+                  </span>
+                  ​
+                  <progress class="progress is-danger" value="43" max="100">
+                    43%
+                  </progress>
+                  <span className="right">18%</span>
+                  <span className="left">
+                    Colonias que tienen edificios construidos
+                  </span>
+                  ​
+                  <progress class="progress is-warning" value="18" max="100">
+                    18%
+                  </progress>
+                </div>
+                <div className="column is-half">
+                  <Img
+                    fluid={data.imageFour.childImageSharp.fluid}
+                    alt="Venta de casas en Querétaro"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="container">
+              <div className="columns">
+                <div className="column"></div>
+                <div
+                  className="column is-three-quarters has-text-centered"
+                  id="informacion"
+                >
+                  <h2 className="subtitle is-2 has-text-grey-dark  has-text-weight-bold">
+                    Ventajas de comprar o rentar en Querétaro con nosotros
+                  </h2>
+
+                  <p className="is-size-4">
+                    Tenemos todas las herramientas para hacer que el proceso sea
+                    lo más fácil posible. Si buscas comprar o rentar, nosotros
+                    nos encargamos de encontrar el mejor lugar para ti. ¿Sabías
+                    que mucha gente se enfrenta a mucha ansiedad cuando está por
+                    hacerse de una casa? El principal motivo de esto es porque
+                    es muy difícil tener datos y conocimientos que respalden una
+                    decisión tan importante. Piénsalo de la siguiente manera,
+                    ¿dejarías que alguien te operara el corazón sin antes saber
+                    sus estudios, el por qué te quiere operar y cuáles son las
+                    probabilidades de éxito?
+                  </p>
+
+                  <p className="is-size-4">
+                    Desafortunadamente, cuando compras o rentas una casa más o
+                    menos vas a ciegas. Te pueden gustar las fotos que ves,
+                    recordar que algún amigo te dijo que esa era una colonia
+                    increíble, dejarte llevar por el discurso del vendedor o por
+                    un supuesto gran descuento. Pero, ¿qué tanto es cierto?
+                  </p>
+
+                  <p className="is-size-4">
+                    Nosotros te ofrecemos todo ese conocimiento que te va a
+                    ayudar a tomar la mejor decisión para eliminar totalmente
+                    esa incertidumbre. Nuestra Inteligencia Artificial está
+                    desarrollada para manejar los números pero también para
+                    entender todo el entorno de una casa y ver si es compatible
+                    con tus necesidades diarias. No creemos que sea adecuado
+                    mandarte un montón de fotos para ver si “chicle y pega” si
+                    no sabemos nada de ti.
+                  </p>
+
+                  <p className="is-size-4">
+                    Si una casa te gusta, te vamos a decir si el precio es el
+                    adecuado o lo inflaron artificialmente para luego intentar
+                    seducirte con una baja considerable del precio final. Si una
+                    casa te gusta para invertir, pero no te quieren hacer
+                    descuento, puede que en realidad el precio sea ya muy bueno
+                    y no sea necesario perder el tiempo (o la oportunidad en sí)
+                    tratando de negociar una baja.
+                  </p>
+
+                  <p className="is-size-4">
+                    No es necesario sufrir en uno de los momentos más
+                    importantes de la vida. Cambiar de ciudad o de casa es algo
+                    que se tendría que disfrutar. El sufrimiento debe quedarse
+                    en el engorroso proceso de empacar, desempacar y acomodar
+                    cosas.
+                  </p>
+                  <Img
+                  fluid={data.imageThree.childImageSharp.fluid}
+                  alt="Renta de casas en Querétaro"
+                />
+                  <p className="is-size-4">
+                    Si en cambio estás buscando vender o rentar tu casa, te
+                    ofrecemos una experiencia completamente distinta a las
+                    tradicionales. Hasta ahora, la estrategia de venta de una
+                    casa es colgar una lona, llevar a la mayor cantidad de gente
+                    y esperar a que alguno de todos ellos se decida por comprar.
+                  </p>
+
+                  <p className="is-size-4">
+                    El precio, si te asesora alguien, va a ser más abajo del que
+                    debería. ¿Por qué? Porque el chiste es vender lo más rápido
+                    posible y no enseñarle la casa a taaaantas personas. ¿Te
+                    imaginas qué flojera da ir 150 veces a enseñar una casa?
+                  </p>
+
+                  <p className="is-size-4">
+                    Con nuestra gran cantidad de datos, nosotros podemos darte
+                    un precio justo. Luego, si tienes alguna urgencia por
+                    vender, entonces voluntariamente le podemos bajar el precio.
+                    Si no tienes prisa o tu casa es una inversión que busca
+                    maximizar su ganancia, entonces esperamos más tiempo con un
+                    precio adecuado.
+                  </p>
+
+                  <p className="is-size-4">
+                    Nuestra Inteligencia Artificial perfila a la gente para que
+                    cada visita sea un auténtico probable comprador. Así,
+                    evitamos el estrés de estar cada tercer día recibiendo a
+                    gente que tiene 10% de probabilidades de comprarte. Nuestro
+                    proceso se vuelve más eficiente, menos rasposo y, por lo
+                    tanto, podemos cobrar comisiones más bajas que nuestros
+                    competidores.
+                  </p>
+                </div>
+                <div className="column"></div>
+              </div>
+              <div className="columns">
+                <div className="column">
+                  <div className="notification is-primary">
+                    <h2 className="subtitle is-5 has-text-white-ter has-text-weight-bold">
+                      Datos
+                    </h2>
+                    <p>
+                      Conocimiento es poder. Hemos analizado más de 8,000
+                      viviendas en el mercado para poder darte la mejor asesoría
+                      inmobiliaria y poner de tu lado toda esa información para
+                      tomar la mejor decisión a la hora de negociar tu próximo
+                      hogar o una exitosa inversión inmobiliaria.
+                    </p>
+                  </div>
+                </div>
+                <div className="column">
+                  <div className="notification is-info">
+                    <h2 className="subtitle is-5 has-text-white-ter has-text-weight-bold">
+                      Entorno
+                    </h2>
+                    <p>
+                      No existe la mejor colonia en Querétaro. Lo que es bueno
+                      para uno, no es lo mejor para otro. Nuestra Inteligencia
+                      Artificial contempla todos los servicios que rodean una
+                      colonia para escoger la ideal para ti y tu familia.
+                    </p>
+                  </div>
+                </div>
+                <div className="column">
+                  <div className="notification is-success">
+                    <h2 className="subtitle is-5 has-text-white-ter has-text-weight-bold">
+                      Ahorro de tiempo
+                    </h2>
+                    <p>
+                      Nuestras soluciones tecnológicas nos ayudan a evitar
+                      visitas o llamadas a casas incompatibles. Eso, traducido
+                      al español, es ahorro de tiempo y frustraciones para
+                      todos.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="container">
+            <div className="columns">
+              <div className="column"></div>
+              <div className="column is-three-quarters has-text-centered">
+                <h2 className="subtitle is-2 has-text-grey-dark  has-text-weight-bold">
+                  Ventajas de comprar o rentar en Querétaro con nosotros
+                </h2>
+                
+                <p className="is-size-4"> 
+                  Querétaro es una ciudad increíble. Y es normal que mucha gente
+                  esté buscando cambiar su vida a este maravilloso Estado. Sin
+                  embargo, la idea de un lugar completamente nuevo es algo que
+                  vuelve todo más complicado.
+                </p>
+
+                <p className="is-size-4">
+                  Algunos de nosotros han pasado por ese proceso, así que
+                  sabemos muy bien a lo que te enfrentas al mudarte a Querétaro
+                  y estamos preparados para ayudarte a que la transición sea lo
+                  más fácil posible. Sabemos las preguntas frecuentes, las
+                  inquietudes, las cosas que no te imaginas que van a hacer
+                  importantes y al final no solo son importantes, sino que hasta
+                  fundamentales. Sabemos qué te conviene pensar a la hora de
+                  mudarte, a qué no darle importancia y hasta las sensaciones y
+                  sentimientos que van a cruzar por tu cabeza.
+                </p>
+                <Img
+                    fluid={data.imageFive.childImageSharp.fluid}
+                    alt="Vivir en Querétaro"
+                  />
+              </div>
+              <div className="column"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="hero is-medium">
+        <div className="hero-body">
+          <div className="container">
+            <div className="columns">
+              <div classname="column is-half">
+                <h3 className="is-size-3">
+                  ¿Quieres estar en contacto con nosotros?
+                </h3>
+                <MyForm />
+              </div>
+              <div classname="column is-half"></div>
+            </div>
+          </div>
+        </div>
+      </section>
       <Footer />
     </div>
   );

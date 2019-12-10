@@ -25,13 +25,7 @@ const Footer = () => (
                 Inicio
               </Link>
             </div>
-            <div className="column center">
-              <p>
-                <Link to="/portafolio" className="navbar-item has-text-white">
-                  Portafolio
-                </Link>
-              </p>
-            </div>
+
             <div className="column right">
               <Link to="/contacto" className="navbar-item has-text-white">
                 Contacto
@@ -39,8 +33,8 @@ const Footer = () => (
             </div>
           </div>
           <p className="is-size-7">
-            Agencia de Marketing Digital en Querétaro | Equilibrio Studio. Todos
-            los derechos reservados. 2019
+            Agencia Inmobiliaria en Querétaro.  Todos
+            los derechos reservados. 2020.
           </p>
 
           <article className="media center">
