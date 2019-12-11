@@ -4,7 +4,7 @@ module.exports = {
     author: "Agencia inmobiliaria",
     description:
       "Somos una Agencia Inmobiliaria en Querétaro basada en Inteligencia Artificial y Big Data.",
-    siteUrl: "https://equilibrio.studio",
+    siteUrl: "https://vivirenqueretaro.mx",
     facebook: "https://facebook.com/VivirEnQueretaroMX"
   },
   
